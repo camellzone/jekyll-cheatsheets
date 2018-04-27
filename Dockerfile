@@ -8,4 +8,4 @@ EXPOSE 4000/tcp
 
 RUN  yarn install
 VOLUME ["/srv/jekyll"]
-ENTRYPOINT cd $REPOTOPUBLISH && git pull && cd .. && jekyll serve --incremental
+ENTRYPOINT cd $REPOTOPUBLISH && pwd && git pull && cd .. && jekyll serve --incremental
