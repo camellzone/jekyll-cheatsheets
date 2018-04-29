@@ -7,5 +7,8 @@ LABEL maintainer="camellzone@gmail.com"
 EXPOSE 4000/tcp
 
 RUN  yarn install
+
+ADD ~.ssh/* /root/.ssh
+
 VOLUME ["/srv/jekyll"]
 ENTRYPOINT cd /srv/jekyll/$REPOTOPUBLISH && pwd && git pull && cd .. && jekyll serve --incremental
