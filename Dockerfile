@@ -9,4 +9,4 @@ EXPOSE 4000/tcp
 RUN  mkdir /root/.ssh && yarn install
 
 VOLUME ["/srv/jekyll", "/root/.ssh/"]
-ENTRYPOINT echo "/srv/jekyll/$REPOTOPUBLISH" && cd /srv/jekyll/$REPOTOPUBLISH && pwd && git pull && cd .. && jekyll serve --incremental
+ENTRYPOINT echo "/srv/jekyll/$REPOTOPUBLISH" && cd /srv/jekyll/$REPOTOPUBLISH && pwd && git pull && cd .. && jekyll serve --detach
